@@ -21,3 +21,22 @@ module.exports.address = test => {
         connection.socket.once('data', () => connection.socket.end());
     });
 };
+
+/*
+module.exports.freebind = test => {
+    mxConnect({
+        target: 'kreata.ee',
+        localAddress: 'ip:v6:addr',
+        dnsOptions: {
+            ignoreIPv6: false,
+            preferIPv6: true,
+            blockLocalAddresses: false
+        }
+    }, (err, connection) => {
+        test.ifError(err);
+        test.ok(connection.socket);
+        connection.socket.once('end', () => test.done());
+        connection.socket.once('data', () => connection.socket.end());
+    });
+};
+*/
